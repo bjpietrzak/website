@@ -9,29 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Chosen Palette: Trustworthy & Warm -->
-    <!-- Application Structure Plan: Zastosowano strukturę jednolitycznej strony (SPA) z nawigacją płynnie przewijającą do kluczowych sekcji. Dodano sekcję "Historie i Świadectwa" po "Jak Pomóc?" aby wzmocnić emocjonalny apel przed finalnym modułem płatności "Wesprzyj". Taki układ został wybrany, aby utrzymać uwagę użytkownika i przedstawić spójną narrację – od misji, przez potrzebę, realne efekty (świadectwa), aż po łatwą ścieżkę do dokonania darowizny. -->
-    <!-- Visualization & Content Choices: 1. Cel zbiórki (Informowanie/Motywowanie) -> Interaktywny wskaźnik postępu (HTML/CSS/JS) i wykres kołowy (Chart.js) -> Użytkownik widzi realny wpływ darowizn. 2. Świadectwa (Emocjonalne/Zaufanie) -> Prosty slider JS (HTML/CSS/JS) -> Umożliwia angażujące przeglądanie kluczowych historii. 3. Opcje darowizny (Porównanie/Organizacja) -> Klikalne karty z predefiniowanymi kwotami. Wybór Chart.js do wizualizacji celu finansowego jest uzasadniony potrzebą dynamicznego i zrozumiałego przedstawienia danych. -->
-    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-stone-50 text-stone-800">
 
@@ -72,7 +50,7 @@
                 <div class="text-center max-w-3xl mx-auto">
                      <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Nasza Misja: Edukacja z Fundamentem</h2>
                     <p class="mt-4 text-stone-600">
-                        Ta sekcja przedstawia fundamenty naszej działalności. Wierzymy, że edukacja to więcej niż nauka – to formowanie charakteru. W Szkołach im. Króla Dawida łączymy wysoki poziom akademicki, oparty na wzorcach klasycznych, z solidnym kręgosłupem wartości chrześcijańskich, przygotowując uczniów do mądrego i odpowiedzialnego życia.
+                        Wierzymy, że edukacja to więcej niż nauka – to formowanie charakteru. W Chrześcijańskich Szkołach im. Króla Dawida dążymy do wysokiego poziomu nauczania, opartego na wzorcach zaczerpniętych z idei edukacji klasycznej, z solidnym fundamentem wartości chrześcijańskich, przygotowując uczniów do mądrego i odpowiedzialnego życia.<br><br>Naszą misją jest zapewnienie uczniom klasycznej chrześcijańskiej edukacji, która rozwija cnoty i postawy oparte na wartościach, kształtuje umiejętność krytycznego myślenia oraz inspiruje do wykorzystywania talentów na rzecz dla dobra wspólnego
                     </p>
                 </div>
 
@@ -80,17 +58,17 @@
                     <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="text-4xl text-amber-600 mb-4">🏛️</div>
                         <h3 class="text-xl font-bold text-blue-900">Edukacja Klasyczna</h3>
-                        <p class="mt-2 text-stone-600">Czerpiemy z najlepszych wzorców antycznych, ucząc krytycznego myślenia, logiki i sztuki argumentacji. Stawiamy na głębokie zrozumienie, a nie pamięciowe opanowanie materiału.</p>
+                        <p class="mt-2 text-stone-600">Czerpiemy z najlepszych wzorców ponadczasowych ucząc krytycznego myślenia, logiki i sztuki argumentacji - debaty. Stawiamy na głębokie zrozumienie, a nie tylko na pamięciowe opanowanie materiału.</p>
                     </div>
                     <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="text-4xl text-amber-600 mb-4">✝️</div>
                         <h3 class="text-xl font-bold text-blue-900">Wartości Chrześcijańskie</h3>
-                        <p class="mt-2 text-stone-600">Tworzymy środowisko oparte na szacunku, miłości bliźniego i prawdzie. Wartości te są integralną częścią naszej codzienności, a nie tylko dodatkiem do programu nauczania.</p>
+                        <p class="mt-2 text-stone-600">Tworzymy środowisko oparte na wartościach takich jak: Prawda, Dobro, Piękno ucząc szacunku i miłości bliźniego. Wartości te są integralną częścią naszej codzienności.</p>
                     </div>
                     <div class="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow duration-300">
                         <div class="text-4xl text-amber-600 mb-4">👨‍👩‍👧‍👦</div>
                         <h3 class="text-xl font-bold text-blue-900">Otwarta Społeczność</h3>
-                        <p class="mt-2 text-stone-600">Jesteśmy otwarci na rodziny z różnych środowisk. Pragniemy, by wysokiej jakości edukacja była dostępna dla każdego zdolnego ucznia, niezależnie od sytuacji materialnej rodziny.</p>
+                        <p class="mt-2 text-stone-600">Jesteśmy otwarci na rodziny z różnych środowisk. Pragniemy, ta ścieżka kształcenia była dostępna dla każdego zdolnego ucznia, niezależnie od sytuacji materialnej rodziny.</p>
                     </div>
                 </div>
             </div>
@@ -101,26 +79,8 @@
                 <div class="text-center max-w-3xl mx-auto">
                     <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Nasz Cel: Fundusz Stypendialny</h2>
                     <p class="mt-4 text-stone-600">
-                        W tej części wyjaśniamy, dlaczego zwracamy się o wsparcie. Naszym celem jest zebranie funduszy, które pozwolą nam objąć programem stypendialnym utalentowanych uczniów, których rodziny napotykają bariery finansowe. Każda złotówka przybliża nas do zapewnienia ciągłości edukacji tym, którzy jej pragną i na nią zasługują. Poniżej widać postęp naszej zbiórki oraz strukturę planowanych wydatków.
+                        Naszym celem jest zbieranie funduszy, które pozwolą nam objąć programem stypendialnym uczniów, których rodziny napotykają bariery finansowe oraz uczniów ponadprzeciętnymi zdolnościami edukacyjnymi. Każda złotówka przybliża uczniów do pełnego rozwoju ich potencjału.
                     </p>
-                </div>
-                
-                <div class="mt-16 grid lg:grid-cols-2 gap-12 items-center">
-                    <div class="bg-white p-8 rounded-2xl shadow-lg">
-                        <h3 class="text-xl font-bold text-blue-900 text-center mb-2">Postęp zbiórki</h3>
-                        <p class="text-center text-stone-500 mb-4">Cel: <span id="goal-amount-text">150 000</span> zł</p>
-                        
-                        <div class="bg-stone-200 rounded-full h-8 overflow-hidden">
-                            <div id="progress-bar" class="bg-amber-600 h-full rounded-full transition-all duration-1000 ease-out text-white flex items-center justify-end pr-2 font-bold" style="width: 0%;"></div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <span class="text-3xl font-bold text-blue-900" id="current-amount-text">48 750 zł</span>
-                            <p class="text-stone-600">już zebrane dzięki Państwa hojności!</p>
-                        </div>
-                    </div>
-                    <div class="chart-container">
-                        <canvas id="impactChart"></canvas>
-                    </div>
                 </div>
             </div>
         </section>
@@ -129,9 +89,9 @@
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-blue-900">Jak Możesz Pomóc?</h2>
                 <p class="mt-4 text-stone-600 max-w-3xl mx-auto">
-                    Twoje wsparcie ma realne znaczenie. W tej sekcji znajdziesz konkretne sposoby, w jakie możesz dołączyć do naszej misji. Każda forma pomocy, niezależnie od jej wielkości, jest cegiełką budującą przyszłość naszych uczniów. Wybierz opcję, która najbardziej Ci odpowiada i stań się częścią naszej społeczności.
+                    Twoje wsparcie ma realne znaczenie. Każda forma pomocy, niezależnie od jej wielkości, jest cegiełką budującą przyszłość naszych uczniów. Wybierz opcję, która najbardziej Ci odpowiada i stań się częścią naszej społeczności.
                 </p>
-                
+
                 <div class="mt-16 grid md:grid-cols-3 gap-8">
                     <div class="border border-stone-200 p-8 rounded-2xl bg-white shadow-sm">
                         <h3 class="text-2xl font-bold text-amber-700">Jednorazowa Wpłata</h3>
@@ -153,7 +113,6 @@
             </div>
         </section>
 
-        <!-- NOWA SEKCJA: HISTORIE I ŚWIADECTWA -->
         <section id="historie" class="py-20 md:py-28 bg-stone-100">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto">
@@ -163,7 +122,6 @@
                     </p>
                 </div>
 
-                <!-- Slider Testimoniali -->
                 <div class="mt-12 max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-2xl shadow-xl border border-stone-200 relative">
                     <div id="testimonial-slider" class="relative overflow-hidden h-64 md:h-48 flex items-center">
                         <blockquote id="testimonial-content-1" class="testimonial-item transition-opacity duration-700 opacity-100 absolute w-full text-center">
@@ -192,7 +150,6 @@
                     </div>
                 </div>
 
-                <!-- Galeria Zdjęć (Placeholder) -->
                 <h3 class="text-2xl font-bold text-blue-900 mt-20 mb-8 text-center">Nasza Społeczność w Obiektywie</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden">
@@ -211,8 +168,6 @@
 
             </div>
         </section>
-        <!-- KONIEC NOWEJ SEKCJI -->
-
 
         <section id="wesprzyj" class="py-20 md:py-28 bg-white">
             <div class="container mx-auto px-6 text-center">
@@ -257,170 +212,6 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const goalAmount = 150000;
-            const currentAmount = 48750;
-            const donationButtons = document.querySelectorAll('.donation-amount-btn');
-            const customAmountInput = document.getElementById('custom-amount-input');
-            const progressBar = document.getElementById('progress-bar');
-            const currentAmountText = document.getElementById('current-amount-text');
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            const testimonialItems = document.querySelectorAll('.testimonial-item');
-            const testimonialDots = document.querySelectorAll('.testimonial-dot');
-            let currentTestimonialIndex = 0;
-
-            function formatCurrency(value) {
-                return new Intl.NumberFormat('pl-PL', { style: 'currency', currency: 'PLN', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(value);
-            }
-            
-            function updateProgressBar() {
-                const percentage = (currentAmount / goalAmount) * 100;
-                progressBar.style.width = `${percentage}%`;
-                progressBar.textContent = `${Math.round(percentage)}%`;
-                currentAmountText.textContent = formatCurrency(currentAmount);
-                document.getElementById('goal-amount-text').textContent = formatCurrency(goalAmount);
-            }
-            
-            setTimeout(updateProgressBar, 500);
-
-            function createImpactChart() {
-                const ctx = document.getElementById('impactChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'doughnut',
-                    data: {
-                        labels: ['Stypendia dla uczniów', 'Materiały edukacyjne', 'Rozwój kadry', 'Działalność operacyjna'],
-                        datasets: [{
-                            label: 'Przeznaczenie środków',
-                            data: [65, 15, 10, 10],
-                            backgroundColor: [
-                                'rgba(217, 119, 6, 0.8)',
-                                'rgba(30, 58, 138, 0.8)',
-                                'rgba(100, 116, 139, 0.8)',
-                                'rgba(245, 245, 244, 0.8)'
-                            ],
-                            borderColor: [
-                                'rgba(217, 119, 6, 1)',
-                                'rgba(30, 58, 138, 1)',
-                                'rgba(100, 116, 139, 1)',
-                                'rgba(245, 245, 244, 1)'
-                            ],
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: {
-                                position: 'bottom',
-                            },
-                            tooltip: {
-                                callbacks: {
-                                    label: function(context) {
-                                        let label = context.label || '';
-                                        if (label) {
-                                            label += ': ';
-                                        }
-                                        if (context.parsed !== null) {
-                                            label += context.parsed + '%';
-                                        }
-                                        return label;
-                                    }
-                                }
-                            },
-                            title: {
-                                display: true,
-                                text: 'Na co przeznaczymy Twoje wsparcie?',
-                                font: {
-                                    size: 16
-                                },
-                                color: '#1e293b'
-                            }
-                        }
-                    }
-                });
-            }
-
-            createImpactChart();
-
-            function clearActiveButtonState() {
-                 donationButtons.forEach(btn => {
-                    btn.classList.remove('bg-amber-600', 'text-white', 'border-amber-600');
-                    btn.classList.add('bg-white', 'text-stone-700', 'border-stone-300');
-                });
-            }
-
-            donationButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    clearActiveButtonState();
-                    button.classList.add('bg-amber-600', 'text-white', 'border-amber-600');
-                    button.classList.remove('bg-white', 'text-stone-700', 'border-stone-300');
-                    customAmountInput.value = ''; 
-                });
-            });
-
-            customAmountInput.addEventListener('input', () => {
-                clearActiveButtonState();
-            });
-
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                     if (mobileMenu.classList.contains('hidden') === false) {
-                        mobileMenu.classList.add('hidden');
-                    }
-                });
-            });
-
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-            });
-            
-            function showTestimonial(index) {
-                testimonialItems.forEach((item, i) => {
-                    item.classList.add('opacity-0');
-                    item.classList.remove('opacity-100');
-                    item.style.zIndex = 1;
-                    if (i === index) {
-                        item.classList.remove('opacity-0');
-                        item.classList.add('opacity-100');
-                        item.style.zIndex = 10;
-                    }
-                });
-                testimonialDots.forEach((dot, i) => {
-                    dot.classList.remove('bg-amber-600');
-                    dot.classList.add('bg-stone-300');
-                    if (i === index) {
-                        dot.classList.add('bg-amber-600');
-                        dot.classList.remove('bg-stone-300');
-                    }
-                });
-                currentTestimonialIndex = index;
-            }
-
-            function nextTestimonial() {
-                currentTestimonialIndex = (currentTestimonialIndex + 1) % testimonialItems.length;
-                showTestimonial(currentTestimonialIndex);
-            }
-
-            testimonialDots.forEach(dot => {
-                dot.addEventListener('click', function() {
-                    const index = parseInt(this.getAttribute('data-index'));
-                    showTestimonial(index);
-                });
-            });
-
-            // Auto-advance testimonials
-            showTestimonial(0); // Show first testimonial initially
-            setInterval(nextTestimonial, 7000); // Change testimonial every 7 seconds
-
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
