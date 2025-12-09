@@ -152,18 +152,27 @@
 
                 <h3 class="text-2xl font-bold text-blue-900 mt-20 mb-8 text-center">Nasza Społeczność w Obiektywie</h3>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden">
-                        <img src="https://placehold.co/400x300/e7e5e4/3b82f6?text=Lekcja+na+Świeżym+Powietrzu" alt="" class="w-full h-full object-cover">
+                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onclick="openGallery()">
+                        <img src="/Users/potato/Projects/Work/website/Galeria/482029531_981839274041508_5945852460642377143_n.jpg" alt="Lekcja na Świeżym Powietrzu" class="w-full h-full object-cover pointer-events-none">
                     </div>
-                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden">
-                        <img src="https://placehold.co/400x300/f5f5f4/3b82f6?text=Festiwal+Edukacji+Klasycznej" alt="" class="w-full h-full object-cover">
+                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onclick="openGallery()">
+                        <img src="/Users/potato/Projects/Work/website/Galeria/Festiwal_edukacji_klasycznej.jpg" alt="Festiwal Edukacji Klasycznej" class="w-full h-full object-cover pointer-events-none">
                     </div>
-                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden">
-                         <img src="https://placehold.co/400x300/e7e5e4/3b82f6?text=Projekt+Naukowy+Liceum" alt="" class="w-full h-full object-cover">
+                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onclick="openGallery()">
+                         <img src="/Users/potato/Projects/Work/website/Galeria/Projekt_naukowy_w_liceum.jpg" alt="Projekt Naukowy Liceum" class="w-full h-full object-cover pointer-events-none">
                     </div>
-                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden">
-                        <img src="https://placehold.co/400x300/f5f5f4/3b82f6?text=Wspólna+Modlitwa+i+Spotkanie" alt="" class="w-full h-full object-cover">
+                    <div class="h-48 md:h-64 bg-stone-300 rounded-xl shadow-lg flex items-center justify-center text-sm text-stone-600 overflow-hidden hover:shadow-2xl transition-shadow duration-300 cursor-pointer" onclick="openGallery()">
+                        <img src="/Users/potato/Projects/Work/website/Galeria/Wspólna_modlitwa_i_spotkanie.jpg" alt="Wspólna Modlitwa i Spotkanie" class="w-full h-full object-cover pointer-events-none">
                     </div>
+                </div>
+                
+                <!-- Hidden gallery images - only visible in modal -->
+                <div id="hidden-gallery-images" class="hidden">
+                    <img src="/Users/potato/Projects/Work/website/Galeria/515679948_1064823289076439_616390282304473620_n.jpg" class="gallery-image">
+                    <img src="/Users/potato/Projects/Work/website/Galeria/482022663_982096730682429_6800097860902509599_n.jpg" alt="Wycieczka Edukacyjna do Muzeum" class="gallery-image">
+                    <img src="/Users/potato/Projects/Work/website/Galeria/482986066_982727927285976_7914275708712692150_n.jpg" alt="Konkurs Debat Oksfordzkich" class="gallery-image">
+                    <img src="/Users/potato/Projects/Work/website/Galeria/494206016_122215190384165961_2919616787274241917_n.jpg" alt="Warsztaty Artystyczne" class="gallery-image">
+                    <img src="/Users/potato/Projects/Work/website/Galeria/514380438_1064822522409849_3882290885260389879_n.jpg" alt="Lekcja Języka Łacińskiego" class="gallery-image">
                 </div>
 
             </div>
@@ -200,6 +209,33 @@
         </section>
 
     </main>
+
+    <!-- Gallery Modal -->
+    <div id="gallery-modal" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+        <button id="close-gallery-modal" class="absolute top-4 right-4 text-white hover:text-amber-600 transition-colors duration-300">
+            <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+        
+        <button id="prev-gallery-btn" class="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-600 transition-colors duration-300">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+        </button>
+        
+        <button id="next-gallery-btn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-amber-600 transition-colors duration-300">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </button>
+        
+        <div class="max-w-5xl max-h-full w-full flex flex-col items-center">
+            <img id="modal-gallery-image" src="" alt="" class="max-h-[70vh] w-auto object-contain rounded-lg shadow-2xl">
+            <p id="modal-gallery-caption" class="mt-4 text-white text-center text-lg"></p>
+            <p id="gallery-counter" class="mt-2 text-amber-600 font-semibold"></p>
+        </div>
+    </div>
 
     <footer class="bg-blue-900 text-white">
         <div class="container mx-auto px-6 py-10 text-center">
